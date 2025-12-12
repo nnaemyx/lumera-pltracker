@@ -27,21 +27,21 @@ export default function Features() {
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 border-gray-200 dark:border-gray-700 shadow-sm">
-      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-5 tracking-tight">
-        Lumera Features
+    <div className="bg-[#111118] rounded-2xl p-6 border-2 border-[#1e1e2e] shadow-xl backdrop-blur-sm">
+      <h3 className="text-xl font-bold text-white mb-5 tracking-tight">
+        Nexus Features
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {features.map((feature, index) => (
           <div key={index} className="flex items-start gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-emerald-500/20">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg glow-primary">
               <feature.icon className="text-white" size={22} />
             </div>
             <div>
-              <h4 className="font-semibold text-gray-900 dark:text-white text-sm">
+              <h4 className="font-semibold text-white text-sm">
                 {feature.title}
               </h4>
-              <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 font-medium">
+              <p className="text-xs text-gray-400 mt-1 font-medium">
                 {feature.description}
               </p>
             </div>

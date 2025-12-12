@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lumera Dashboard - Staking & Governance dApp",
+  title: "Nexus - Staking & Governance dApp",
   description:
-    "A decentralized application for staking, governance, and token management on the Lumera blockchain. Built with Next.js and CosmJS for seamless Web3 interaction.",
+    "A decentralized application for staking, governance, and token management on the Cosmos ecosystem. Built with Next.js and CosmJS for seamless Web3 interaction.",
 };
 
 export default function RootLayout({

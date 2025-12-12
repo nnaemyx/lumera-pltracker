@@ -48,15 +48,15 @@ export default function TransferModal({ isOpen, onClose }: TransferModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4">
+      <div className="bg-[#111118] rounded-2xl shadow-2xl max-w-md w-full p-6 border-2 border-[#1e1e2e]">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="text-2xl font-bold text-white">
             Send LUME
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-all duration-200 hover:scale-110 active:scale-95"
+            className="p-2 hover:bg-[#1e1e2e] rounded-xl transition-all duration-200 hover:scale-110 active:scale-95 text-gray-400 hover:text-white"
           >
             <X size={20} />
           </button>
@@ -64,7 +64,7 @@ export default function TransferModal({ isOpen, onClose }: TransferModalProps) {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-300 mb-2">
               Recipient Address
             </label>
             <input
@@ -73,12 +73,12 @@ export default function TransferModal({ isOpen, onClose }: TransferModalProps) {
               onChange={(e) => setRecipient(e.target.value)}
               placeholder="lumera1..."
               required
-              className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-200 font-medium"
+              className="w-full px-4 py-3 border-2 border-[#1e1e2e] rounded-xl focus:ring-2 focus:ring-[#00ff88] focus:border-[#00ff88] bg-[#0a0a0f] text-white transition-all duration-200 font-medium placeholder-gray-500"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-300 mb-2">
               Amount (LUME)
             </label>
             <input
@@ -88,12 +88,12 @@ export default function TransferModal({ isOpen, onClose }: TransferModalProps) {
               onChange={(e) => setAmount(e.target.value)}
               placeholder="0.0"
               required
-              className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-200 font-medium"
+              className="w-full px-4 py-3 border-2 border-[#1e1e2e] rounded-xl focus:ring-2 focus:ring-[#00ff88] focus:border-[#00ff88] bg-[#0a0a0f] text-white transition-all duration-200 font-medium placeholder-gray-500"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-300 mb-2">
               Memo (Optional)
             </label>
             <input
@@ -101,18 +101,18 @@ export default function TransferModal({ isOpen, onClose }: TransferModalProps) {
               value={memo}
               onChange={(e) => setMemo(e.target.value)}
               placeholder="Optional message"
-              className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-200 font-medium"
+              className="w-full px-4 py-3 border-2 border-[#1e1e2e] rounded-xl focus:ring-2 focus:ring-[#00ff88] focus:border-[#00ff88] bg-[#0a0a0f] text-white transition-all duration-200 font-medium placeholder-gray-500"
             />
           </div>
 
           {error && (
-            <div className="p-3 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-300 text-sm">
+            <div className="p-3 bg-red-950/50 border border-red-500/30 rounded-lg text-red-300 text-sm">
               {error}
             </div>
           )}
 
           {success && (
-            <div className="p-3 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg text-green-700 dark:text-green-300 text-sm">
+            <div className="p-3 bg-green-950/50 border border-green-500/30 rounded-lg text-green-300 text-sm">
               {success}
             </div>
           )}
@@ -120,7 +120,7 @@ export default function TransferModal({ isOpen, onClose }: TransferModalProps) {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 hover:from-cyan-600 hover:via-teal-600 hover:to-emerald-600 text-white rounded-xl transition-all duration-200 font-semibold text-sm shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#00b8e6] hover:from-[#00d977] hover:via-[#00b8e6] hover:to-[#0099cc] text-[#0a0a0f] rounded-xl transition-all duration-200 font-semibold text-sm shadow-lg glow-primary hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             {isLoading ? (
               <>

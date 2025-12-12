@@ -82,15 +82,15 @@ export default function StakingModal({ isOpen, onClose }: StakingModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full p-6 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4">
+      <div className="bg-[#111118] rounded-2xl shadow-2xl max-w-md w-full p-6 max-h-[90vh] overflow-y-auto border-2 border-[#1e1e2e]">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h2 className="text-2xl font-bold text-white">
             Staking
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-all duration-200 hover:scale-110 active:scale-95"
+            className="p-2 hover:bg-[#1e1e2e] rounded-xl transition-all duration-200 hover:scale-110 active:scale-95 text-gray-400 hover:text-white"
           >
             <X size={20} />
           </button>
@@ -101,8 +101,8 @@ export default function StakingModal({ isOpen, onClose }: StakingModalProps) {
             onClick={() => setAction("delegate")}
             className={`flex-1 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-200 ${
               action === "delegate"
-                ? "bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/30 scale-[1.02]"
-                : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
+                ? "bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#00b8e6] text-[#0a0a0f] shadow-lg glow-primary scale-[1.02]"
+                : "bg-[#1a1a24] text-gray-300 hover:bg-[#1e1e2e] border border-[#1e1e2e]"
             }`}
           >
             Delegate
@@ -111,8 +111,8 @@ export default function StakingModal({ isOpen, onClose }: StakingModalProps) {
             onClick={() => setAction("undelegate")}
             className={`flex-1 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-200 ${
               action === "undelegate"
-                ? "bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/30 scale-[1.02]"
-                : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
+                ? "bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#00b8e6] text-[#0a0a0f] shadow-lg glow-primary scale-[1.02]"
+                : "bg-[#1a1a24] text-gray-300 hover:bg-[#1e1e2e] border border-[#1e1e2e]"
             }`}
           >
             Undelegate
@@ -121,27 +121,27 @@ export default function StakingModal({ isOpen, onClose }: StakingModalProps) {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-300 mb-2">
               Validator
             </label>
             {isLoadingValidators ? (
               <div className="flex items-center justify-center py-8">
-                <Loader2 className="animate-spin text-emerald-500" size={32} />
-                <span className="ml-2 text-sm text-gray-500">Loading validators from Lumera...</span>
+                <Loader2 className="animate-spin text-[#00ff88]" size={32} />
+                <span className="ml-2 text-sm text-gray-400">Loading validators from Lumera...</span>
               </div>
             ) : validators.length === 0 ? (
-              <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-                <p className="text-sm text-yellow-800 dark:text-yellow-200">
+              <div className="p-4 bg-amber-950/30 border border-amber-500/30 rounded-lg">
+                <p className="text-sm text-amber-300">
                   ⚠️ No validators available. This could mean:
                 </p>
-                <ul className="text-xs text-yellow-700 dark:text-yellow-300 mt-2 ml-4 list-disc">
+                <ul className="text-xs text-amber-400/80 mt-2 ml-4 list-disc">
                   <li>Lumera network is not fully active yet</li>
                   <li>Network connection issues</li>
                   <li>RPC/REST endpoints may be down</li>
                 </ul>
                 <button
                   onClick={loadValidators}
-                  className="mt-3 text-sm text-emerald-600 dark:text-emerald-400 hover:underline font-semibold"
+                  className="mt-3 text-sm text-[#00ff88] hover:underline font-semibold"
                 >
                   Try Again
                 </button>
@@ -151,7 +151,7 @@ export default function StakingModal({ isOpen, onClose }: StakingModalProps) {
                 value={selectedValidator}
                 onChange={(e) => setSelectedValidator(e.target.value)}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-200 font-medium"
+                className="w-full px-4 py-3 border-2 border-[#1e1e2e] rounded-xl focus:ring-2 focus:ring-[#00ff88] focus:border-[#00ff88] bg-[#0a0a0f] text-white transition-all duration-200 font-medium"
               >
                 <option value="">Select a validator ({validators.length} available)</option>
                 {validators.map((validator, index) => (
@@ -170,7 +170,7 @@ export default function StakingModal({ isOpen, onClose }: StakingModalProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-gray-300 mb-2">
               Amount (LUME)
             </label>
             <input
@@ -180,18 +180,18 @@ export default function StakingModal({ isOpen, onClose }: StakingModalProps) {
               onChange={(e) => setAmount(e.target.value)}
               placeholder="0.0"
               required
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              className="w-full px-4 py-3 border-2 border-[#1e1e2e] rounded-xl focus:ring-2 focus:ring-[#00ff88] focus:border-[#00ff88] bg-[#0a0a0f] text-white transition-all duration-200 font-medium placeholder-gray-500"
             />
           </div>
 
           {error && (
-            <div className="p-3 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-300 text-sm">
+            <div className="p-3 bg-red-950/50 border border-red-500/30 rounded-lg text-red-300 text-sm">
               {error}
             </div>
           )}
 
           {success && (
-            <div className="p-3 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg text-green-700 dark:text-green-300 text-sm">
+            <div className="p-3 bg-green-950/50 border border-green-500/30 rounded-lg text-green-300 text-sm">
               {success}
             </div>
           )}
@@ -199,7 +199,7 @@ export default function StakingModal({ isOpen, onClose }: StakingModalProps) {
           <button
             type="submit"
             disabled={isLoading || isLoadingValidators}
-            className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-600 text-white rounded-xl transition-all duration-200 font-semibold text-sm shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#00ff88] via-[#00d4ff] to-[#00b8e6] hover:from-[#00d977] hover:via-[#00b8e6] hover:to-[#0099cc] text-[#0a0a0f] rounded-xl transition-all duration-200 font-semibold text-sm shadow-lg glow-primary hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             {isLoading ? (
               <>
