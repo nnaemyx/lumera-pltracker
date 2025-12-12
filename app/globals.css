@@ -3,14 +3,14 @@
 :root {
   --background: #0a0a0f;
   --foreground: #f8fafc;
-  --primary: #8b5cf6;
-  --primary-dark: #7c3aed;
-  --accent: #a78bfa;
-  --accent-dark: #8b5cf6;
-  --secondary: #c4b5fd;
-  --secondary-dark: #a78bfa;
-  --tertiary: #6366f1;
-  --tertiary-dark: #4f46e5;
+  --primary: #06b6d4;
+  --primary-dark: #0891b2;
+  --accent: #22d3ee;
+  --accent-dark: #06b6d4;
+  --secondary: #67e8f9;
+  --secondary-dark: #22d3ee;
+  --tertiary: #0ea5e9;
+  --tertiary-dark: #0284c7;
   --surface: #111118;
   --surface-elevated: #1a1a24;
   --border: #1e1e2e;
@@ -20,8 +20,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-orbitron);
+  --font-sans: var(--font-nunito);
+  --font-heading: var(--font-exo2);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -29,7 +29,7 @@ body {
   background: linear-gradient(135deg, #0a0a0f 0%, #0f0f1a 50%, #0a0a0f 100%);
   background-attachment: fixed;
   color: var(--foreground);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: var(--font-nunito), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -57,9 +57,9 @@ body {
 
 /* Glow effects */
 .glow-primary {
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.7), 0 0 60px rgba(139, 92, 246, 0.5), 0 0 90px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.7), 0 0 60px rgba(6, 182, 212, 0.5), 0 0 90px rgba(6, 182, 212, 0.3);
 }
 
 .glow-accent {
-  box-shadow: 0 0 30px rgba(167, 139, 250, 0.7), 0 0 60px rgba(167, 139, 250, 0.5), 0 0 90px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.7), 0 0 60px rgba(34, 211, 238, 0.5), 0 0 90px rgba(34, 211, 238, 0.3);
 }

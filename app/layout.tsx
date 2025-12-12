@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Orbitron, Inter, Geist_Mono } from "next/font/google";
+import { Exo_2, Nunito, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { WalletProvider } from "@/contexts/WalletContext";
 
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
+const exo2 = Exo_2({
+  variable: "--font-exo2",
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -23,9 +23,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nova - Next-Gen DeFi Interface",
+  title: "Aurora - Advanced DeFi Platform",
   description:
-    "A next-generation decentralized application for staking, governance, and token management on the Cosmos ecosystem. Experience the future of DeFi with Nova.",
+    "An advanced decentralized application for staking, governance, and token management on the Cosmos ecosystem. Experience the dawn of DeFi with Aurora.",
 };
 
 export default function RootLayout({
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${orbitron.variable} ${inter.variable} ${geistMono.variable} antialiased`}
+        className={`${exo2.variable} ${nunito.variable} ${geistMono.variable} antialiased`}
       >
         <WalletProvider>{children}</WalletProvider>
       </body>
