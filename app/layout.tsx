@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Rajdhani, Source_Sans_3, Geist_Mono } from "next/font/google";
+import { Kanit, Work_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { WalletProvider } from "@/contexts/WalletContext";
 
-const rajdhani = Rajdhani({
-  variable: "--font-rajdhani",
+const kanit = Kanit({
+  variable: "--font-kanit",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-const sourceSans3 = Source_Sans_3({
-  variable: "--font-source-sans",
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -23,9 +23,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zenith - Peak DeFi Performance",
+  title: "Pulse - Dynamic DeFi Platform",
   description:
-    "Reach the peak of decentralized finance. A powerful platform for staking, governance, and token management on the Cosmos ecosystem. Experience the zenith of DeFi.",
+    "Feel the pulse of decentralized finance. A dynamic platform for staking, governance, and token management on the Cosmos ecosystem. Experience the power of DeFi.",
 };
 
 export default function RootLayout({
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rajdhani.variable} ${sourceSans3.variable} ${geistMono.variable} antialiased`}
+        className={`${kanit.variable} ${workSans.variable} ${geistMono.variable} antialiased`}
       >
         <WalletProvider>{children}</WalletProvider>
       </body>

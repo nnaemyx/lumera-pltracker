@@ -55,10 +55,10 @@ export default function QuickActions({
   ];
 
   const actionColors = [
-    { gradient: "from-violet-500 to-violet-600", bg: "bg-violet-950/40", border: "border-violet-400/50" },
+    { gradient: "from-pink-500 to-pink-600", bg: "bg-pink-950/40", border: "border-pink-400/50" },
+    { gradient: "from-fuchsia-500 to-fuchsia-600", bg: "bg-fuchsia-950/40", border: "border-fuchsia-400/50" },
     { gradient: "from-purple-500 to-purple-600", bg: "bg-purple-950/40", border: "border-purple-400/50" },
-    { gradient: "from-indigo-500 to-indigo-600", bg: "bg-indigo-950/40", border: "border-indigo-400/50" },
-    { gradient: "from-violet-400 to-purple-500", bg: "bg-violet-950/40", border: "border-violet-400/50" },
+    { gradient: "from-pink-400 to-fuchsia-500", bg: "bg-pink-950/40", border: "border-pink-400/50" },
   ];
 
   return (
@@ -74,7 +74,7 @@ export default function QuickActions({
           >
             <action.icon className="text-white" size={28} />
           </div>
-          <h3 className="font-bold text-white mb-2 text-xl tracking-tight" style={{ fontFamily: 'var(--font-rajdhani)' }}>
+          <h3 className="font-bold text-white mb-2 text-xl tracking-tight" style={{ fontFamily: 'var(--font-kanit)' }}>
             {action.label}
           </h3>
           <p className="text-sm text-gray-300 font-medium">
