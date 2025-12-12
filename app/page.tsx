@@ -11,7 +11,7 @@ import TransferModal from "@/components/TransferModal";
 import StakingModal from "@/components/StakingModal";
 import HistoryModal from "@/components/HistoryModal";
 import AnalyticsModal from "@/components/AnalyticsModal";
-import { AlertCircle, Sparkles, Zap } from "lucide-react";
+import { AlertCircle, Sparkles, Zap, ArrowRight, Shield, TrendingUp, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -25,9 +25,11 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a0a0f] relative overflow-hidden">
       {/* Animated background gradient */}
       <div className="fixed inset-0 bg-gradient-to-br from-[#0a0a0f] via-[#0f0f1a] to-[#0a0a0f] pointer-events-none" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(249,115,22,0.08),transparent_50%)] pointer-events-none" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(251,146,60,0.05),transparent_50%)] pointer-events-none" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(245,158,11,0.03),transparent_50%)] pointer-events-none" />
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_50%)] pointer-events-none" />
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.06),transparent_50%)] pointer-events-none" />
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.04),transparent_50%)] pointer-events-none" />
+      {/* Animated mesh gradient */}
+      <div className="fixed inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(99,102,241,0.03)_50%,transparent_70%)] pointer-events-none animate-pulse"></div>
       
       <Header />
 
@@ -53,107 +55,127 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto"
           >
-            {/* HERO SECTION */}
-            <div className="mb-16 mt-12">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                {/* Left Side - Content */}
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="space-y-8"
-                >
-                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full mb-4">
-                    <Sparkles className="text-orange-400" size={18} />
-                    <span className="text-orange-300 text-sm font-semibold uppercase tracking-wider" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
-                      Decentralized Finance
-                    </span>
-                  </div>
-
-                  <h1 
-                    className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight"
-                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            {/* HERO SECTION - NEW DESIGN */}
+            <div className="mb-20 mt-8">
+              <div className="max-w-7xl mx-auto">
+                {/* Centered Hero */}
+                <div className="text-center mb-16">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-500/10 border border-indigo-500/30 rounded-full mb-8 backdrop-blur-sm"
                   >
-                    <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">
-                      Welcome to Apex
+                    <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+                    <span className="text-indigo-300 text-sm font-semibold uppercase tracking-wider" style={{ fontFamily: 'var(--font-outfit)' }}>
+                      Next-Gen DeFi Platform
                     </span>
-                    <br />
-                    <span className="text-white">Your DeFi</span>
-                    <br />
-                    <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                      Command Center
-                    </span>
-                  </h1>
-                  
-                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light max-w-xl">
-                    Experience the future of decentralized finance. Manage, stake, and track your tokens with a powerful dashboard built on Cosmos blockchain technology.
-                  </p>
+                  </motion.div>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <motion.div 
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-orange-500/10 border-2 border-orange-400/40 rounded-2xl text-orange-300 backdrop-blur-md shadow-xl hover:border-orange-400/60 transition-all duration-300"
+                  <motion.h1 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="text-6xl md:text-8xl font-black text-white mb-6 leading-[1.05] tracking-tight"
+                    style={{ fontFamily: 'var(--font-outfit)' }}
+                  >
+                    <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                      Vortex
+                    </span>
+                    <br />
+                    <span className="text-white text-5xl md:text-7xl">DeFi Platform</span>
+                  </motion.h1>
+                  
+                  <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-3xl mx-auto mb-10 font-light"
+                  >
+                    Revolutionize your decentralized finance experience. Manage assets, stake tokens, and govern protocols with cutting-edge technology.
+                  </motion.p>
+
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white rounded-2xl transition-all duration-300 font-bold text-lg shadow-2xl glow-primary hover:scale-105 active:scale-95"
+                    style={{ fontFamily: 'var(--font-outfit)' }}
+                  >
+                    <AlertCircle size={22} />
+                    <span>Connect Wallet to Begin</span>
+                    <ArrowRight size={20} />
+                  </motion.div>
+                </div>
+
+                {/* Feature Cards Grid */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="grid md:grid-cols-3 gap-6 mb-16"
+                >
+                  {[
+                    { icon: Shield, title: "Secure", desc: "Enterprise-grade security", color: "indigo" },
+                    { icon: TrendingUp, title: "Stake", desc: "Earn rewards seamlessly", color: "purple" },
+                    { icon: Globe, title: "Govern", desc: "Shape the future", color: "pink" },
+                  ].map((feature, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 + i * 0.1 }}
+                      className={`bg-gradient-to-br from-[#111118] to-[#0f0f15] rounded-2xl p-6 border border-${feature.color}-500/20 hover:border-${feature.color}-400/40 transition-all duration-300 hover:scale-105 group`}
                     >
-                      <AlertCircle size={20} className="text-orange-400" />
-                      <span className="font-semibold" style={{ fontFamily: 'var(--font-space-grotesk)' }}>Connect Keplr Wallet</span>
+                      <div className={`w-14 h-14 bg-${feature.color}-500/20 rounded-xl flex items-center justify-center mb-4 border border-${feature.color}-400/30 group-hover:bg-${feature.color}-500/30 transition-colors`}>
+                        <feature.icon className={`text-${feature.color}-400`} size={28} />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-outfit)' }}>
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        {feature.desc}
+                      </p>
                     </motion.div>
-                    
-                    <div className="flex items-center gap-6 text-sm text-gray-400">
-                      <div className="flex items-center gap-2">
-                        <Zap className="text-amber-400" size={18} />
-                        <span>Fast Transactions</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Sparkles className="text-orange-400" size={18} />
-                        <span>Secure Staking</span>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </motion.div>
 
-                {/* Right Side - Image/Visual */}
+                {/* Visual Element */}
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="relative max-w-4xl mx-auto"
                 >
-                  <div className="relative w-full h-[500px] md:h-[600px]">
-                    {/* Decorative gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-amber-500/20 to-orange-600/20 rounded-3xl blur-3xl"></div>
-                    
-                    {/* Main visual container */}
-                    <div className="relative h-full bg-gradient-to-br from-[#1a1a24] to-[#0f0f15] rounded-3xl border-2 border-orange-500/30 p-8 flex items-center justify-center overflow-hidden">
-                      {/* Animated grid pattern */}
-                      <div className="absolute inset-0 opacity-10">
-                        <div className="absolute inset-0" style={{
-                          backgroundImage: `linear-gradient(rgba(249, 115, 22, 0.1) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(249, 115, 22, 0.1) 1px, transparent 1px)`,
-                          backgroundSize: '50px 50px'
-                        }}></div>
-                      </div>
-                      
-                      {/* Central logo/icon */}
-                      <div className="relative z-10 text-center">
-                        <motion.div
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
-                          className="inline-flex items-center justify-center w-40 h-40 md:w-48 md:h-48 bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 rounded-3xl shadow-2xl glow-primary border-2 border-orange-400/50 mb-6 relative"
-                        >
-                          <span className="text-white font-black text-8xl md:text-9xl tracking-tighter" style={{ fontFamily: 'var(--font-space-grotesk)' }}>A</span>
-                          <div className="absolute -top-2 -right-2 w-8 h-8 bg-amber-400 rounded-full animate-pulse glow-primary"></div>
-                          <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-orange-400 rounded-full animate-pulse delay-300"></div>
-                        </motion.div>
-                        
-                        {/* Floating particles */}
-                        <div className="absolute top-10 left-10 w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
-                        <div className="absolute top-20 right-16 w-2 h-2 bg-amber-400 rounded-full animate-pulse delay-500"></div>
-                        <div className="absolute bottom-16 left-16 w-4 h-4 bg-orange-500 rounded-full animate-pulse delay-700"></div>
-                        <div className="absolute bottom-10 right-10 w-2 h-2 bg-amber-500 rounded-full animate-pulse delay-1000"></div>
-                      </div>
+                  <div className="relative h-[400px] bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl border-2 border-indigo-500/20 overflow-hidden backdrop-blur-sm">
+                    {/* Animated background */}
+                    <div className="absolute inset-0">
+                      <div className="absolute inset-0" style={{
+                        backgroundImage: `radial-gradient(circle at 2px 2px, rgba(99,102,241,0.15) 1px, transparent 0)`,
+                        backgroundSize: '40px 40px'
+                      }}></div>
                     </div>
+                    
+                    {/* Central logo */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="w-64 h-64 border-2 border-dashed border-indigo-500/30 rounded-full"
+                      >
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-32 h-32 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-2xl glow-primary">
+                            <span className="text-white font-black text-6xl" style={{ fontFamily: 'var(--font-outfit)' }}>V</span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </div>
+
+                    {/* Floating elements */}
+                    <div className="absolute top-10 left-10 w-4 h-4 bg-indigo-400 rounded-full animate-pulse"></div>
+                    <div className="absolute top-20 right-20 w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-300"></div>
+                    <div className="absolute bottom-20 left-20 w-5 h-5 bg-pink-400 rounded-full animate-pulse delay-500"></div>
+                    <div className="absolute bottom-10 right-10 w-3 h-3 bg-indigo-400 rounded-full animate-pulse delay-700"></div>
                   </div>
                 </motion.div>
               </div>
@@ -166,29 +188,35 @@ export default function Home() {
             </div>
 
             {/* GETTING STARTED */}
-            <div className="bg-gradient-to-br from-[#111118] to-[#0f0f15] rounded-3xl p-10 border-2 border-orange-500/20 shadow-2xl backdrop-blur-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/5 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl"></div>
+            <div className="bg-gradient-to-br from-[#111118] to-[#0f0f15] rounded-3xl p-10 border-2 border-indigo-500/20 shadow-2xl backdrop-blur-sm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
               <div className="relative z-10">
-                <h3 className="text-3xl font-black text-white mb-8 tracking-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                <h3 className="text-3xl font-black text-white mb-8 tracking-tight" style={{ fontFamily: 'var(--font-outfit)' }}>
                   Getting Started
                 </h3>
-                <ol className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-6">
                   {["Install Keplr Wallet browser extension","Click 'Connect Keplr' in the header","Cosmos network will be added automatically","Start managing, staking & transacting tokens"].map((step, i) => (
-                    <li key={i} className="flex items-start gap-5 group">
-                      <span className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 text-white flex items-center justify-center text-base font-black shadow-lg glow-primary group-hover:scale-110 transition-transform duration-300" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 * i }}
+                      className="flex items-start gap-4 group p-4 rounded-xl hover:bg-white/5 transition-colors"
+                    >
+                      <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white flex items-center justify-center text-base font-black shadow-lg glow-primary group-hover:scale-110 transition-transform duration-300 flex-shrink-0" style={{ fontFamily: 'var(--font-outfit)' }}>
                         {i + 1}
                       </span>
-                      <span className="leading-relaxed text-lg font-normal pt-3 text-gray-200 group-hover:text-white transition-colors">
+                      <span className="leading-relaxed text-base font-normal pt-3 text-gray-300 group-hover:text-white transition-colors">
                         {i === 0 ? (
                           <>
-                            Install <a href="https://www.keplr.app/" target="_blank" rel="noopener noreferrer" className="underline text-orange-400 font-semibold hover:text-amber-400 transition-colors">Keplr Wallet</a> browser extension
+                            Install <a href="https://www.keplr.app/" target="_blank" rel="noopener noreferrer" className="underline text-indigo-400 font-semibold hover:text-purple-400 transition-colors">Keplr Wallet</a> browser extension
                           </>
                         ) : step}
                       </span>
-                    </li>
+                    </motion.div>
                   ))}
-                </ol>
+                </div>
               </div>
             </div>
           </motion.div>

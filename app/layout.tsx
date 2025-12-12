@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Poppins, Space_Grotesk, Geist_Mono } from "next/font/google";
+import { Outfit, DM_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { WalletProvider } from "@/contexts/WalletContext";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700"],
@@ -23,9 +23,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Apex - Staking & Governance dApp",
+  title: "Vortex - Next-Gen DeFi Platform",
   description:
-    "A decentralized application for staking, governance, and token management on the Cosmos ecosystem. Built with Next.js and CosmJS for seamless Web3 interaction.",
+    "A cutting-edge decentralized application for staking, governance, and token management on the Cosmos ecosystem. Experience the future of DeFi with Vortex.",
 };
 
 export default function RootLayout({
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${spaceGrotesk.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${dmSans.variable} ${geistMono.variable} antialiased`}
       >
         <WalletProvider>{children}</WalletProvider>
       </body>
