@@ -25,9 +25,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WalletWatch - Multi-Wallet Watchlist",
+  title: "P$L Tracker",
   description:
-    "Track multiple wallet addresses in one dashboard. Monitor balances, transactions, and activity across all your watched wallets on Lumera Testnet.",
+    "Track and monitor you profit and loss on Lumera Testnet.",
 };
 
 export default function RootLayout({
