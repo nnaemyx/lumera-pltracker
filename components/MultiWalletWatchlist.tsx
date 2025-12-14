@@ -50,6 +50,7 @@ export default function MultiWalletWatchlist() {
         console.error("Error loading watched wallets:", e);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Auto-add connected wallet if not already in watchlist
@@ -74,7 +75,7 @@ export default function MultiWalletWatchlist() {
         getTransactionHistory(address)
       ]);
       return {
-        balances: balances || [],
+        balances: balances ? [...balances.map(b => ({ denom: b.denom, amount: b.amount }))] : [],
         transactionCount: transactions.length
       };
     } catch (error) {
